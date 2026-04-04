@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropzy — Быстрый обмен файлами</title>
+    <meta name="description" content="Безопасный файлообменник для быстрой передачи файлов до 5 GB. Шифрование AES-256.">
+    <meta property="og:title" content="Dropzy — Быстрый обмен файлами">
+    <meta property="og:description" content="Безопасный файлообменник для быстрой передачи файлов до 5 GB.">
+    <link rel="icon" href="static/img/icon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+<header class="header">
+    <div class="header-top">
+        <div class="container header-top-inner">
+            <div class="status-indicator"><span class="status-dot"></span><span>Все системы работают исправно</span></div>
+            <div class="header-top-right"><span class="online-badge"><span class="online-dot"></span>Онлайн: <strong id="onlineCount">—</strong></span></div>
+        </div>
+    </div>
+    <div class="header-main">
+        <div class="container header-main-inner">
+            <a href="index.html" class="logo"><img src="static/img/logo.svg" alt="Dropzy" class="logo-icon"><span class="logo-text">Dropzy</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg></button>
+            <nav class="nav"><a href="index.html" class="nav-link active">Главная</a><a href="pricing.html" class="nav-link ">Тарифы</a><a href="about.html" class="nav-link ">О сервисе</a></nav>
+            <div class="header-actions"><a href="login.html" class="btn btn-filled">Войти</a><a href="register.html" class="btn btn-outline">Регистрация</a></div>
+        </div>
+    </div>
+</header>
+<div class="mobile-overlay" id="mobileOverlay"><div class="mobile-menu">
+    <a href="index.html" class="mobile-nav-link">Главная</a><a href="pricing.html" class="mobile-nav-link">Тарифы</a>
+    <a href="about.html" class="mobile-nav-link">О сервисе</a><a href="contact.html" class="mobile-nav-link">Контакты</a>
+    <div class="mobile-menu-divider"></div>
+    <a href="login.html" class="mobile-nav-link">Войти</a><a href="register.html" class="mobile-nav-link">Зарегистрироваться</a>
+</div></div>
+<div class="toast-container" id="toastContainer"></div>
+<main class="main"><div class="container">
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>Быстрый и безопасный<br>обмен файлами</h1>
+        <p>Загружайте файлы до 5 GB и делитесь ссылками с коллегами и друзьями. Шифрование AES-256, высокая скорость.</p>
+        <a href="register.html" class="btn btn-green btn-lg">Начать бесплатно</a>
+    </div>
+    <div class="hero-floating">
+        <img src="static/img/hero.png" alt="" class="hero-float hero-float-1">
+        <img src="static/img/hero.png" alt="" class="hero-float hero-float-2">
+        <img src="static/img/hero.png" alt="" class="hero-float hero-float-3">
+    </div>
+</div>
+
+<div class="upload-section">
+    <h2 class="section-title">Загрузить файл</h2>
+    <p class="section-subtitle">Перетащите файл в область ниже или нажмите для выбора</p>
+    <div class="upload-zone" id="uploadZone">
+        <div class="upload-zone-content">
+            <div class="upload-zone-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 32V16m0 0l-6 6m6-6l6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M38 32v4a4 4 0 01-4 4H14a4 4 0 01-4-4v-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="upload-zone-text">Перетащите файл сюда</span>
+            <span class="upload-zone-hint">или <button class="upload-zone-btn" id="uploadBtn">выберите на устройстве</button></span>
+            <span class="upload-zone-limit">Максимум 5 GB · PDF, DOCX, XLSX, ZIP, JPG, MP4</span>
+        </div>
+        <input type="file" id="uploadInput" style="display:none">
+    </div>
+    <div class="upload-progress" id="uploadProgress" style="display:none">
+        <div class="upload-progress-info"><span class="upload-progress-name" id="uploadFileName"></span><span class="upload-progress-size" id="uploadFileSize"></span></div>
+        <div class="upload-progress-bar"><div class="upload-progress-fill" id="uploadFill" style="width:0%"></div></div>
+        <div class="upload-progress-footer"><span class="upload-progress-percent" id="uploadPercent">0%</span><button class="upload-progress-cancel" id="uploadCancel">Отмена</button></div>
+    </div>
+</div>
+
+<div class="how-section">
+    <h2 class="section-title">Как это работает</h2>
+    <p class="section-subtitle">Три простых шага для обмена файлами</p>
+    <div class="how-steps">
+        <div class="how-step"><div class="how-step-num">1</div><h3>Загрузите файл</h3><p>Выберите файл на устройстве или перетащите его в зону загрузки</p></div>
+        <div class="how-step-arrow">→</div>
+        <div class="how-step"><div class="how-step-num">2</div><h3>Получите ссылку</h3><p>Система создаст уникальную ссылку для скачивания вашего файла</p></div>
+        <div class="how-step-arrow">→</div>
+        <div class="how-step"><div class="how-step-num">3</div><h3>Поделитесь</h3><p>Отправьте ссылку получателю — скачивание доступно без регистрации</p></div>
+    </div>
+</div>
+
+<div class="features">
+    <div class="feature-card"><div class="feature-icon"><img src="static/img/feature-encryption.png" alt="" class="feature-img"></div><h3>Шифрование AES-256</h3><p>Все файлы шифруются при загрузке и расшифровываются только при скачивании получателем.</p></div>
+    <div class="feature-card"><div class="feature-icon"><img src="static/img/feature-speed.png" alt="" class="feature-img"></div><h3>До 50 MB/s</h3><p>Распределённые серверы в Европе обеспечивают высокую скорость загрузки и скачивания.</p></div>
+    <div class="feature-card"><div class="feature-icon"><img src="static/img/feature-links.png" alt="" class="feature-img"></div><h3>Прямые ссылки</h3><p>Получатель скачивает файл по ссылке без регистрации и установки приложений.</p></div>
+</div>
+
+</div></main>
+<footer class="footer"><div class="container">
+    <div class="footer-top">
+        <div class="footer-brand">
+            <a href="index.html" class="logo"><img src="static/img/logo.svg" alt="Dropzy" class="logo-icon"><span class="logo-text">Dropzy</span></a>
+            <p class="footer-desc">Быстрый и безопасный обмен файлами.</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-col"><span class="footer-col-title">Сервис</span><a href="index.html">Главная</a><a href="pricing.html">Тарифы</a><a href="about.html">О сервисе</a></div>
+            <div class="footer-col"><span class="footer-col-title">Информация</span><a href="contact.html">Контакты</a><a href="privacy.html">Конфиденциальность</a><a href="terms.html">Условия использования</a></div>
+        </div>
+    </div>
+    <div class="footer-bottom"><span>© 2023–2026 Dropzy. Все права защищены.</span></div>
+</div></footer>
+<script src="static/js/main.js"></script>
+</body>
+</html>

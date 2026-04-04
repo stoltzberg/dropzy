@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тарифы — Dropzy</title>
+    <meta name="description" content="Безопасный файлообменник для быстрой передачи файлов до 5 GB. Шифрование AES-256.">
+    <meta property="og:title" content="Dropzy — Быстрый обмен файлами">
+    <meta property="og:description" content="Безопасный файлообменник для быстрой передачи файлов до 5 GB.">
+    <link rel="icon" href="static/img/icon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+<header class="header">
+    <div class="header-top">
+        <div class="container header-top-inner">
+            <div class="status-indicator"><span class="status-dot"></span><span>Все системы работают исправно</span></div>
+            <div class="header-top-right"><span class="online-badge"><span class="online-dot"></span>Онлайн: <strong id="onlineCount">—</strong></span></div>
+        </div>
+    </div>
+    <div class="header-main">
+        <div class="container header-main-inner">
+            <a href="index.html" class="logo"><img src="static/img/logo.svg" alt="Dropzy" class="logo-icon"><span class="logo-text">Dropzy</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg></button>
+            <nav class="nav"><a href="index.html" class="nav-link ">Главная</a><a href="pricing.html" class="nav-link active">Тарифы</a><a href="about.html" class="nav-link ">О сервисе</a></nav>
+            <div class="header-actions"><a href="login.html" class="btn btn-filled">Войти</a><a href="register.html" class="btn btn-outline">Регистрация</a></div>
+        </div>
+    </div>
+</header>
+<div class="mobile-overlay" id="mobileOverlay"><div class="mobile-menu">
+    <a href="index.html" class="mobile-nav-link">Главная</a><a href="pricing.html" class="mobile-nav-link">Тарифы</a>
+    <a href="about.html" class="mobile-nav-link">О сервисе</a><a href="contact.html" class="mobile-nav-link">Контакты</a>
+    <div class="mobile-menu-divider"></div>
+    <a href="login.html" class="mobile-nav-link">Войти</a><a href="register.html" class="mobile-nav-link">Зарегистрироваться</a>
+</div></div>
+<div class="toast-container" id="toastContainer"></div>
+<main class="main"><div class="container">
+
+<div style="padding-top:20px">
+    <h1 class="section-title">Выберите подходящий тариф</h1>
+    <p class="section-subtitle">Начните бесплатно, переходите на премиум когда будете готовы</p>
+    <div class="pricing-grid">
+        <div class="pricing-card">
+            <div class="pricing-name">Бесплатный</div><div class="pricing-price">0 ₽ <span>/ мес</span></div>
+            <ul class="pricing-features"><li>До 2 GB на файл</li><li>Хранение 7 дней</li><li>1 скачивание в день</li><li>Базовая поддержка</li></ul>
+            <a href="register.html" class="btn btn-outline">Начать бесплатно</a>
+        </div>
+        <div class="pricing-card popular">
+            <div class="pricing-name">Премиум</div><div class="pricing-price">299 ₽ <span>/ мес</span></div>
+            <ul class="pricing-features"><li>До 5 GB на файл</li><li>Хранение 30 дней</li><li>Безлимитные скачивания</li><li>Приоритетная поддержка</li><li>Шифрование AES-256</li></ul>
+            <a href="register.html" class="btn btn-green">Оформить</a>
+        </div>
+        <div class="pricing-card">
+            <div class="pricing-name">Бизнес</div><div class="pricing-price">990 ₽ <span>/ мес</span></div>
+            <ul class="pricing-features"><li>До 20 GB на файл</li><li>Хранение 90 дней</li><li>Безлимитные скачивания</li><li>Выделенная поддержка 24/7</li><li>API доступ</li><li>Брендирование ссылок</li></ul>
+            <a href="contact.html" class="btn btn-outline">Связаться с нами</a>
+        </div>
+    </div>
+</div>
+
+</div></main>
+<footer class="footer"><div class="container">
+    <div class="footer-top">
+        <div class="footer-brand">
+            <a href="index.html" class="logo"><img src="static/img/logo.svg" alt="Dropzy" class="logo-icon"><span class="logo-text">Dropzy</span></a>
+            <p class="footer-desc">Быстрый и безопасный обмен файлами.</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-col"><span class="footer-col-title">Сервис</span><a href="index.html">Главная</a><a href="pricing.html">Тарифы</a><a href="about.html">О сервисе</a></div>
+            <div class="footer-col"><span class="footer-col-title">Информация</span><a href="contact.html">Контакты</a><a href="privacy.html">Конфиденциальность</a><a href="terms.html">Условия использования</a></div>
+        </div>
+    </div>
+    <div class="footer-bottom"><span>© 2023–2026 Dropzy. Все права защищены.</span></div>
+</div></footer>
+<script src="static/js/main.js"></script>
+</body>
+</html>
